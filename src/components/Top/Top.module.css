@@ -1,0 +1,11 @@
+.h1{
+   text-align: center;
+}
+
+
+.top{
+   display: flex;
+   flex-wrap: wrap;
+   color:white;
+   justify-content: center;
+}

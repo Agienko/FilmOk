@@ -9,7 +9,7 @@ const Header = props => {
             <img src={logo} alt="logo" />
         <ul>
             <li><Link to={'/premieres'}>Премьеры</Link> </li>
-            <li>ТОП</li>
+            <li><Link to={'/top'}>ТОП</Link></li>
             <li><input type="text" /> <Link to={'/search'}> <img src={search} alt="search" /></Link> </li>
         </ul>
         </div>
