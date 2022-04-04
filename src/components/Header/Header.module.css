@@ -1,0 +1,33 @@
+.header{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    background-color: #000306;
+   color: white;
+   position: fixed;
+   top: 0;
+   width: 100%;
+}
+.header img{
+    height: 50px;
+    margin: 0 20px;
+  
+}
+.header ul{
+    margin-left: 120px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header ul li {
+   display: flex;
+}
+
+
+
+.header ul li img{
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+}
