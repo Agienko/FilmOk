@@ -1,16 +1,19 @@
 import React from "react";
+import { BrowserRouter} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Premieres from "./components/Premieres/Premieres";
+import Main from "./components/Main/Main";
+
 
 function App() {
  
   return (
     <div className="App">
-     <Header />
-     <Premieres />
-     <Footer />
-
+      <BrowserRouter>
+          <Header />
+          <Main />
+          <Footer />
+      </BrowserRouter>
     </div>
   );
 }

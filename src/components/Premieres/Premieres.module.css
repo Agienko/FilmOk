@@ -1,4 +1,9 @@
-.main{
+.h1{
+   text-align: center;
+}
+
+
+.premieres{
    display: flex;
    flex-wrap: wrap;
    color:white;

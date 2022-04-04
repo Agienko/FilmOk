@@ -11,9 +11,12 @@ const Premieres = props => {
     },[])
 
     return (
-        <div className={s.main}>
-            <h2>Премьеры</h2>
-          {items.map(i => i = <Card {...i} key={i.kinopoiskId}/>)}
+        <div >
+            <h1 className={s.h1}>Премьеры</h1>
+            <div className={s.premieres}>
+            {items.map(i => i = <Card {...i} key={i.kinopoiskId}/>)}
+            </div>
+          
         </div>
     )
 }

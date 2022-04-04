@@ -1,11 +1,16 @@
 .header{
+    z-index: 1000;
     display: grid;
     grid-template-columns: 100px 1fr;
     background-color: #000306;
-   color: white;
-   position: fixed;
-   top: 0;
-   width: 100%;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.header a{
+    color: inherit;
+  text-decoration: none;
 }
 .header img{
     height: 50px;
@@ -24,7 +29,9 @@
    display: flex;
 }
 
-
+.header ul a {
+    display: flex;
+ }
 
 .header ul li img{
     margin: 0 10px;
