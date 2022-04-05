@@ -11,4 +11,6 @@
     position: relative;
     flex-direction: column;
     background-image: url(./img/background.jpg);
+    background-position: 0 0;
+    background-attachment: fixed;
 }

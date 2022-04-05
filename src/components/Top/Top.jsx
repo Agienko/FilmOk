@@ -1,18 +1,43 @@
 import React, { useEffect} from "react";
 import Card from "../Card/Card";
+import Pagination from "../Pagination/Pagination";
 import s from "./Top.module.css"
+import TopSettings from "./TopSett/TopSettings";
 
 const Top = props => {
-    console.log(props.films)
     useEffect(() =>{
        props.getTopFilms()
     },[])
 
+    const setHandleTopFilms = (type) => {
+        props.getTopFilms(type, 1)
+    }
     return (
         <div >
-            <h1 className={s.h1}>ТОП-250</h1>
+            <TopSettings setHandleTopFilms={setHandleTopFilms} />
+
+            <Pagination 
+                activePage ={props.top.activePage} 
+                setActivePage={props.getTopFilms}
+                type={props.top.type}
+                pagesCount={props.top.pagesCount}
+                />
+
+            <h1 className={s.h1}>{props.top.header}</h1>
             <div className={s.top}>
-            {props.films.map(i => i = <Card {...i} key={i.filmId}/>)}
+            {props.top.films.map(i => 
+            <Card 
+                image={i.posterUrlPreview}
+                rating={i.rating}
+                name={i.nameRu} 
+                duration={i.filmLength}
+                countries={i.countries}
+                genres={i.genres}
+                premiere={i.premiereRu}
+                year={i.year}
+                id={i.filmId}
+                key={i.filmId}
+            />)}
             </div>
           
         </div>

@@ -1,0 +1,42 @@
+.pagination{
+   display: flex;
+   font-size: 0.9rem;
+   color: white;
+   font-family: Tahoma, sans-serif;
+   background-color:rgba(0, 0, 0, 0.234);
+   padding: 2px;
+   
+}
+.pagination div{
+   margin: 0 2px;
+   display: flex;
+   justify-content: center;
+   align-items:center;
+   cursor: pointer;
+   border-radius: 8px;
+   transition: background-color .2s linear ;
+   height: 35px;
+   width: 35px;
+   text-shadow: 0 0 5px rgba(51, 51, 51, 0.582);
+}
+
+.pagination div:first-child{
+  margin-left: 45px;
+}
+
+
+.pagination div:hover{
+ background-color:rgba(25, 25, 25, 0.195);
+}
+
+
+
+div .active{
+   font-size: 1.4rem;
+   font-weight: bold;
+   text-shadow: 0 0 10px rgba(24, 24, 24, 0.923);
+}
+.hidden{
+   opacity: 0;
+   z-index: -1;
+}

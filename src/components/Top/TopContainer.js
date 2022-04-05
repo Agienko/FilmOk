@@ -5,7 +5,9 @@ import Top from "./Top";
 
 
 const mapStateToProps = state =>({
-films: state.top.films
+// films: state.top.films,
+// header: state.top.header,
+top: state.top
 })
 
 const TopContainer = connect(mapStateToProps,{getTopFilms})(Top)

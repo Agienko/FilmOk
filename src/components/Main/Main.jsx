@@ -8,7 +8,7 @@ import TopContainer from "../Top/TopContainer";
 import s from "./Main.module.css"
 
 const Main = props => {
- 
+   
     return (
         <div className={s.main}>
            <Routes>
