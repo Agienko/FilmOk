@@ -10,7 +10,6 @@ const premieresReducer = (state = initialState, action) =>{
     switch (action.type){
         case GET_PREMIERES:
             return {films: [...action.films]}
-
         default:
             return state
     }

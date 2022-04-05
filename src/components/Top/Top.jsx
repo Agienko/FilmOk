@@ -16,13 +16,6 @@ const Top = props => {
         <div >
             <TopSettings setHandleTopFilms={setHandleTopFilms} />
 
-            <Pagination 
-                activePage ={props.top.activePage} 
-                setActivePage={props.getTopFilms}
-                type={props.top.type}
-                pagesCount={props.top.pagesCount}
-                />
-
             <h1 className={s.h1}>{props.top.header}</h1>
             <div className={s.top}>
             {props.top.films.map(i => 
@@ -39,7 +32,12 @@ const Top = props => {
                 key={i.filmId}
             />)}
             </div>
-          
+            <Pagination 
+                activePage ={props.top.activePage} 
+                setActivePage={props.getTopFilms}
+                type={props.top.type}
+                pagesCount={props.top.pagesCount}
+                />
         </div>
     )
 }

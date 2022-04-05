@@ -3,9 +3,9 @@
    font-size: 0.9rem;
    color: white;
    font-family: Tahoma, sans-serif;
-   background-color:rgba(0, 0, 0, 0.234);
+   background-color:rgba(0, 0, 0, 0.365);
    padding: 2px;
-   
+   justify-content: center;
 }
 .pagination div{
    margin: 0 2px;
@@ -17,16 +17,13 @@
    transition: background-color .2s linear ;
    height: 35px;
    width: 35px;
-   text-shadow: 0 0 5px rgba(51, 51, 51, 0.582);
+   text-shadow: 0 0 5px rgba(51, 51, 51, 0.239);
 }
 
-.pagination div:first-child{
-  margin-left: 45px;
-}
 
 
 .pagination div:hover{
- background-color:rgba(25, 25, 25, 0.195);
+ background-color:rgba(176, 176, 176, 0.303);
 }
 
 

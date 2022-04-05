@@ -11,7 +11,7 @@ const TopSettings = props => {
             <div className={s.settings + ' ' + (menu || s.upMenu)} >
                 <form className={s.form}> 
                     <div>
-                        <div>Месяц: </div>
+                        <div>Категория поиска: </div>
                         
                         <select  onChange={(e) => setType(e.target.value)}>
                             <option value="TOP_250_BEST_FILMS"> 250 лучших фильмов</option>

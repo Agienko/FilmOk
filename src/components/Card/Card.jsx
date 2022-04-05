@@ -1,15 +1,19 @@
 import React from "react";
 import s from "./Card.module.css"
-import {filmsAPI} from '../../api/api'
+import { Link } from "react-router-dom";
 
 const Card = props => {
     return (
-        <div className={s.card} onClick={() => filmsAPI.getFilm(props.id).then(data => console.log(data)) }>
+       
+        <div className={s.card} >
+             
             <div className={s.wrapper}>
-            <img src={props.image} alt="film" />
+            <Link to={`/film/${props.id}`}>
+                <img src={props.image} alt="film" />
+            </Link>
                 <div className={s.info}>
                     <h3>{props.name}</h3>
-                    <p>Рейтинг: {props.rating}</p>
+                    {props.rating && <p>Рейтинг: {props.rating}</p>}
                     <p>Длительность: {props.duration} мин.</p>
                     <p> Страна: {props.countries.map(i=> i.country).join(', ')}</p>
                     <p> Жанр: {props.genres.map(i=> i.genre).join(', ')}</p>
@@ -20,6 +24,7 @@ const Card = props => {
                 </div>
             </div>
         </div>
+        
     )
 }
 export default Card

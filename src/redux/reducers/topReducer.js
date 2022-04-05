@@ -39,7 +39,6 @@ const setPagesCount = payload => ({type: SET_PAGES_COUNT, payload})
 const changeActivePage = payload => ({type: CHANGE_ACTIVE_PAGE, payload})
 
 export const getTopFilms = (type = 'TOP_250_BEST_FILMS', page = 1) => dispatch => {
-   
     filmsAPI.getTopFilms(type, page)
     .then(data =>{ 
         dispatch(setHeader(type))
