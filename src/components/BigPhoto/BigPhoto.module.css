@@ -58,6 +58,12 @@
 }
 
 
+.hidden{
+  opacity: 0;
+  z-index: -1;
+}
+
+
 @media (max-width:700px) {
   .arrow{
     margin: 5px;

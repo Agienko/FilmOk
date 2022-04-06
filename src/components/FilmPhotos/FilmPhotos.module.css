@@ -46,3 +46,9 @@
     border: 3px solid white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.603);
 }
+
+.h1{
+   background-color:rgba(124, 124, 124, 0.833);
+   text-align: center;
+   padding-top: 20px;
+}

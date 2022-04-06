@@ -11,3 +11,12 @@
    color:white;
    justify-content: center;
 }
+.info {
+  padding: 0 20px;
+}
+
+.info p{
+   font-style: italic;
+   text-shadow: 0 0 8px black;
+   color: white;
+}

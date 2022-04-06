@@ -25,8 +25,14 @@ const Search = props => {
             }
 
             <h1 className={s.h1}>Поиск</h1>
-            <p>Поиск: "{props.keyWord}"</p>
-            <p>Найдено: {props.searchFilmsCountResult} ответов</p>
+            <div className={s.info}>
+                <p>Поиск: "{props.keyWord}"</p>
+                {props.searchFilmsCountResult === 0 
+                ?   <p>По вашему запросу ничего не найдено</p>
+                :   <p>Найдено: {props.searchFilmsCountResult} ...</p>
+                }
+            </div>
+           
             <div className={s.top}>
                 {props.films.map(i => 
                 <Card 

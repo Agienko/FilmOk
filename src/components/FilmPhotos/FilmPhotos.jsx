@@ -12,7 +12,6 @@ const FilmPhotos = props => {
 
     const [isImgOpen, setImgOpen] = useState(false)
     const [image, setImage] = useState(null)
-    
     if (props.isLoading) return <Preloader />
     return (
         <div className={s.photos}>
@@ -28,16 +27,17 @@ const FilmPhotos = props => {
                 <li onClick={() => props.getImages(userId,'COVER', 1)}>Обложки</li>
                 <li onClick={() => props.getImages(userId,'SCREENSHOT', 1)}>Скриншоты</li>
             </ul>
-
+            <h1 className={s.h1}>{props.name}</h1>
             <div className={s.container}>
+               
                 {props.photo.map((item, i) => 
                 <img key={i} src={item.previewUrl} alt={i} onClick={(e)=>{setImgOpen(true); setImage(props.photo[e.target.alt].imageUrl)}}/>)}
             </div>
-
+            { props.pagesCount > 1 &&
             <Pagination activePage ={props.activePage} setActivePage={handlegetImage}
                         type={props.type} pagesCount={props.pagesCount} 
             />
-
+            }
                 
         </div>
 

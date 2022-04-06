@@ -5,7 +5,7 @@ import FilmPhotos from "./FilmPhotos";
 
 
 
-const mapStateToProps = state =>({...state.filmPhotos})
+const mapStateToProps = state =>({...state.filmPhotos, name: state.filmPage.nameRu})
 
 const FilmPhotosContainer = connect(mapStateToProps,{getImages})(FilmPhotos)
 
