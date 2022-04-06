@@ -1,0 +1,39 @@
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.right p{
+    font-size: 13px;
+    color:rgb(124, 124, 124);
+}
+.actors {
+    margin-top: 50px;
+   
+}
+
+.actors h3 {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.actors ul{
+    padding: 5px;
+    border-radius: 10px;
+    color:rgb(230, 230, 230);
+    transition: color .2s linear;
+}
+.actors ul:hover{
+    color:rgb(255, 255, 255);
+}
+
+.actors ul li {
+   list-style: none;
+   font-size: smaller;
+   line-height: 1.5;
+   white-space: nowrap;
+   cursor: pointer;
+}

@@ -5,6 +5,9 @@ const SET_FACTS = 'SET_FACTS'
 const IS_LOADING = 'IS_LOADING'
 const IS_FACTS_LOADING = 'IS_FACTS_LOADING'
 const SET_SIMILARS = 'SET_SIMILARS'
+const SET_SIQUELS_PREAQUELS = 'SET_SIQUELS_PREAQUELS'
+const SET_CLEAR = 'SET_CLEAR'
+const SET_ACTORS = 'SET_ACTORS'
 
 let initialState = {
     countries: [],
@@ -53,6 +56,8 @@ let initialState = {
     isLoading: false,
     isFactsLoading: false,
     similars: [],
+    sequelsPrequels: [],
+    actors: []
 }
 
 const filmPageReducer = (state = initialState, action) =>{
@@ -67,17 +72,26 @@ const filmPageReducer = (state = initialState, action) =>{
             return {...state, isFactsLoading: action.payload}
         case SET_SIMILARS:
             return {...state, similars: action.payload}
+        case SET_SIQUELS_PREAQUELS:
+            return {...state, sequelsPrequels: action.payload}
+        case SET_CLEAR:
+            return {...initialState}
+        case SET_ACTORS:
+            return {...state, actors: action.payload}
         default:
             return state
     }
 }
 export default filmPageReducer
 
+export const setClear = () => ({type: SET_CLEAR})
 const setFilmInfo = payload => ({type: SET_FILM_INFO, payload})
 const setFacts = payload => ({type: SET_FACTS, payload})
 const isLoading = payload => ({type: IS_LOADING, payload})
 const isFactsLoading = payload => ({type: IS_FACTS_LOADING, payload})
 const setSimilars = payload => ({type: SET_SIMILARS, payload})
+const setSequelsPrequels = payload => ({type: SET_SIQUELS_PREAQUELS, payload})
+const setActors = payload => ({type: SET_ACTORS, payload})
 
 export const getFilm = id => dispatch => {
     dispatch(isLoading(true))
@@ -94,4 +108,10 @@ export const getFilm = id => dispatch => {
     filmsAPI.getSimilars(id).then(data => {
        dispatch(setSimilars(data.items))
     })
+    filmsAPI.getSequelsPrequels(id).then(data => {
+        dispatch(setSequelsPrequels(data))
+     })
+     filmsAPI.getStaf(id).then(data => {
+        dispatch(setActors(data))
+     })
 }

@@ -18,6 +18,7 @@ const Card = props => {
                     {props.countries && <p> Страна: {props.countries.map(i=> i.country).join(', ')}</p>}
                     {props.genres && <p> Жанр: {props.genres.map(i=> i.genre).join(', ')}</p>}
                     {props.premiere && <p>Дата выхода: {props.premiere}</p>}
+                    {props.relationType && <p>{props.relationType}</p> }
                     <footer>
                         {props.year && <p>{props.year} год</p>} 
                     </footer>

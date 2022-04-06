@@ -1,14 +1,13 @@
-.similars{
+.sequelsPrequels{
     display: flex;
    flex-wrap: wrap;
    justify-content: center;
   
 }
-.similarsWrapp{
+.sequelsPrequelsWrapp{
     
     color:white;
     text-shadow: 2px 2px 8px rgba(14, 14, 14, 0.775);
     text-align: center;
     padding: 10px;
-    margin-bottom: 150px;
 }

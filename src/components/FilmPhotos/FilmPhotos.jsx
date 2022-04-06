@@ -7,7 +7,9 @@ import s from "./FilmPhotos.module.css"
 
 const FilmPhotos = props => {
     const userId = +useParams()['*']
-    useEffect(()=>{props.getImages(userId, 'STILL', 1)},[])
+    useEffect(()=>{
+        props.getImages(userId, 'STILL', 1)
+    },[])
     const handlegetImage = (type, page) => props.getImages(userId, type, page)
 
     const [isImgOpen, setImgOpen] = useState(false)
@@ -31,7 +33,8 @@ const FilmPhotos = props => {
             <div className={s.container}>
                
                 {props.photo.map((item, i) => 
-                <img key={i} src={item.previewUrl} alt={i} onClick={(e)=>{setImgOpen(true); setImage(props.photo[e.target.alt].imageUrl)}}/>)}
+                <img key={i} src={item.previewUrl} alt={i} 
+                    onClick={(e)=>{setImgOpen(true); setImage(props.photo[e.target.alt].imageUrl)}}/>)}
             </div>
             { props.pagesCount > 1 &&
             <Pagination activePage ={props.activePage} setActivePage={handlegetImage}

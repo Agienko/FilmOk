@@ -32,7 +32,7 @@ const filmPhotosReducer = (state = initialState, action) =>{
 }
 export default filmPhotosReducer
 
-const setImages = payload => ({type: SET_IMAGES, payload})
+export const setImages = payload => ({type: SET_IMAGES, payload})
 const setPagesCount = payload => ({type: SET_PAGES_COUNT, payload})
 const setActivePage = page => ({type: SET_ACTIVE_PAGE, page})
 const setType = payload => ({type: SET_TYPE, payload})

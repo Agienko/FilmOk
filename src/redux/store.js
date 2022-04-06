@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
+import actorsReducer from "./reducers/actorsReducer";
 import filmPageReducer from "./reducers/filmPageReducer";
 import filmPhotosReducer from "./reducers/filmPhotosReducer";
 import premieresReducer from "./reducers/premieresReducer";
@@ -11,7 +12,8 @@ premieres: premieresReducer,
 top: topReducer,
 filmPage: filmPageReducer,
 search: searchReducer,
-filmPhotos: filmPhotosReducer
+filmPhotos: filmPhotosReducer,
+actors: actorsReducer,
 })
 
 

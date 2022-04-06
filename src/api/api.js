@@ -17,7 +17,14 @@ const instance = axios.create({
         'Content-Type': 'application/json',
     },
   });
-  
+  const instanceV1 = axios.create({
+    baseURL: 'https://kinopoiskapiunofficial.tech/api/v1/',
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '1dbf016d-45b0-4073-a4be-1a86b1d67bf3',
+        'Content-Type': 'application/json',
+    },
+  });
   export const filmsAPI = {
     getTopFilms: (type, page) => {// type=TOP_100_POPULAR_FILMS && type=TOP_AWAIT_FILMS && type=TOP_250_BEST_FILMS
         return instance(`films/top?type=${type}&page=${page}`)
@@ -33,10 +40,6 @@ const instance = axios.create({
     },
     getSimilars: filmId => {
         return instance(`films/${filmId}/similars`) //похожие фильмы
-        .then(responce => responce.data)
-    },
-    getVideos: filmId => {
-        return instance(`films/${filmId}/videos`)
         .then(responce => responce.data)
     },
     getPremieres: (year, month) => { //month: JANUARY, FEBRUARY....
@@ -55,6 +58,9 @@ const instance = axios.create({
         return instanceV2_1(`films/search-by-keyword?keyword=${words}&page=${page}`)
         .then(responce => responce.data)
     },
-    
+    getStaf: filmId => {
+        return instanceV1(`staff?filmId=${filmId}`)
+        .then(responce => responce.data)
+    }
 
   }
