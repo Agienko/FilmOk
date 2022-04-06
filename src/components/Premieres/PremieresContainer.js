@@ -5,7 +5,8 @@ import {getPremieres} from "../../redux/reducers/premieresReducer"
 
 
 const mapStateToProps = state =>({
-films: state.premieres.films
+films: state.premieres.films,
+isLoading: state.premieres.isLoading
 })
 
 const PremieresContainer = connect(mapStateToProps,{getPremieres})(Premieres)

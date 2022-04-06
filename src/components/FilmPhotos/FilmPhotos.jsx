@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useParams } from "react-router-dom";
 import BigPhoto from "../BigPhoto/BigPhoto";
 import Pagination from "../Pagination/Pagination";
+import Preloader from "../Preloader/Preloader";
 import s from "./FilmPhotos.module.css"
 
 const FilmPhotos = props => {
@@ -11,6 +12,8 @@ const FilmPhotos = props => {
 
     const [isImgOpen, setImgOpen] = useState(false)
     const [image, setImage] = useState(null)
+    
+    if (props.isLoading) return <Preloader />
     return (
         <div className={s.photos}>
           { isImgOpen && <BigPhoto setImgOpen={setImgOpen} image={image}/>}

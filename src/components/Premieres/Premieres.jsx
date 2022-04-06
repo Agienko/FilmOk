@@ -1,5 +1,6 @@
 import React, { useEffect} from "react";
 import Card from "../Card/Card";
+import Preloader from "../Preloader/Preloader";
 import s from "./Premieres.module.css"
 import Settings from "./Sett/Settings";
 
@@ -12,6 +13,7 @@ const Premieres = props => {
         props.getPremieres(year, month)
     }
 
+    if(props.isLoading) return <Preloader />
     return (
         <div >
             <Settings getHandlePremieres ={getHandlePremieres}/>

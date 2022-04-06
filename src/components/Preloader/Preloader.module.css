@@ -1,0 +1,17 @@
+.preloader{
+   display: flex;
+   justify-content: center;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   
+   z-index: 3000;
+}
+
+.preloader div {
+   margin-top: 150px;
+}
+.preloader div img{
+   width: 320px;
+   opacity: 0.8;
+}
