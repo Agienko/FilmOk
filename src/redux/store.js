@@ -1,6 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
 import filmPageReducer from "./reducers/filmPageReducer";
+import filmPhotosReducer from "./reducers/filmPhotosReducer";
 import premieresReducer from "./reducers/premieresReducer";
 import searchReducer from "./reducers/searchReducer";
 import topReducer from "./reducers/topReducer";
@@ -9,7 +10,8 @@ const reducers = combineReducers({
 premieres: premieresReducer,
 top: topReducer,
 filmPage: filmPageReducer,
-search: searchReducer
+search: searchReducer,
+filmPhotos: filmPhotosReducer
 })
 
 

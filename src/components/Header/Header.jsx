@@ -16,7 +16,7 @@ const Header = props => {
         <div className={s.header}>
             <img src={logo} alt="logo" />
         <ul>
-            <li><Link to={'/premieres'}>ПРЕМЪЕРЫ</Link> </li>
+            <li><Link to={'/premieres'}>ПРЕМЬЕРЫ</Link> </li>
             <li><Link to={'/top'}>ТОП</Link></li>
             <li>
                 <input type="text" placeholder="поиск..." value={keyWord} onChange={(e)=> setKetWord(e.target.value)}/> 

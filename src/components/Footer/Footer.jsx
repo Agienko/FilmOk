@@ -7,9 +7,8 @@ const Footer = props => {
     return (
         <div className={s.footer}>
            <ul>
-            <li><Link to={'/premieres'}>ПРЕМЪЕРЫ</Link> </li>
+            <li><Link to={'/premieres'}>ПРЕМЬЕРЫ</Link> </li>
             <li><Link to={'/top'}>ТОП</Link></li>
-            <li><Link to={'/search'}> Поиск  </Link> </li>
         </ul>
         </div>
     )
