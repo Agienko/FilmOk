@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import {Link, useParams } from "react-router-dom";
+import Card from "../Card/Card";
 import Preloader from "../Preloader/Preloader";
 import Facts from "./Facts/Facts";
 import s from "./FilmPage.module.css"
+import Similars from "./Similars/Similars";
 
 const FilmPage = props => {
     const userId = +useParams()['*']
     useEffect(()=>{
         props.getFilm(userId)
-    },[])
-    console.log(props.filmPage)
+    },[userId])
+   
     if(props.filmPage.isLoading && props.filmPage.isFactsLoading) return <Preloader />
     return (
         <>
@@ -51,9 +53,9 @@ const FilmPage = props => {
                     <p>{props.filmPage.ratingKinopoiskVoteCount.toString().split('').map((n, i) => i%3 === 2 ? n + ' ': n ).join('')} оценки</p>
                 </div>
             </div>
-            
-            {(props.filmPage.facts.length > 0) && <Facts facts={props.filmPage.facts}/> }
 
+            {(props.filmPage.facts.length > 0) && <Facts facts={props.filmPage.facts}/> }
+            <Similars similars ={props.filmPage.similars}/>       
         </>
     )
 }

@@ -9,17 +9,17 @@ const Card = props => {
              
             <div className={s.wrapper}>
             <Link to={`/film/${props.id}`}>
-                <img src={props.image} alt="film" />
+                <img src={props.image} alt="film" width={'260px'} height={'380px'}/>
             </Link>
                 <div className={s.info}>
                     <h3>{props.name}</h3>
                     {props.rating && <p>Рейтинг: {props.rating}</p>}
-                    <p>Длительность: {props.duration} мин.</p>
-                    <p> Страна: {props.countries.map(i=> i.country).join(', ')}</p>
-                    <p> Жанр: {props.genres.map(i=> i.genre).join(', ')}</p>
-                    <p>Дата выхода: {props.premiere}</p>
+                    {props.duration && <p>Длительность: {props.duration} мин.</p>} 
+                    {props.countries && <p> Страна: {props.countries.map(i=> i.country).join(', ')}</p>}
+                    {props.genres && <p> Жанр: {props.genres.map(i=> i.genre).join(', ')}</p>}
+                    {props.premiere && <p>Дата выхода: {props.premiere}</p>}
                     <footer>
-                    <p>{props.year} год</p>
+                        {props.year && <p>{props.year} год</p>} 
                     </footer>
                 </div>
             </div>

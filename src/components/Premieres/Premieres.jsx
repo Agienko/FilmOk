@@ -21,15 +21,9 @@ const Premieres = props => {
             <div className={s.premieres}>
                 {props.films.map(i => 
                 <Card 
-                    image={i.posterUrlPreview}
-                    name={i.nameRu} 
-                    duration={i.duration}
-                    countries={i.countries}
-                    genres={i.genres}
-                    premiere={i.premiereRu}
-                    year={i.year}
-                    id={i.kinopoiskId}
-                    key={i.kinopoiskId}
+                    image={i.posterUrlPreview} name={i.nameRu} duration={i.duration}
+                    countries={i.countries} genres={i.genres} premiere={i.premiereRu}
+                    year={i.year} id={i.kinopoiskId} key={i.kinopoiskId}
                 />)}
             </div>
           

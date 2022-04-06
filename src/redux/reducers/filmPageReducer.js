@@ -4,6 +4,7 @@ const SET_FILM_INFO = 'SET_FILM_INFO'
 const SET_FACTS = 'SET_FACTS'
 const IS_LOADING = 'IS_LOADING'
 const IS_FACTS_LOADING = 'IS_FACTS_LOADING'
+const SET_SIMILARS = 'SET_SIMILARS'
 
 let initialState = {
     countries: [],
@@ -50,7 +51,8 @@ let initialState = {
     year: 0,
     facts: [],
     isLoading: false,
-    isFactsLoading: false
+    isFactsLoading: false,
+    similars: [],
 }
 
 const filmPageReducer = (state = initialState, action) =>{
@@ -63,6 +65,8 @@ const filmPageReducer = (state = initialState, action) =>{
             return {...state, isLoading: action.payload}
         case IS_FACTS_LOADING:
             return {...state, isFactsLoading: action.payload}
+        case SET_SIMILARS:
+            return {...state, similars: action.payload}
         default:
             return state
     }
@@ -73,6 +77,7 @@ const setFilmInfo = payload => ({type: SET_FILM_INFO, payload})
 const setFacts = payload => ({type: SET_FACTS, payload})
 const isLoading = payload => ({type: IS_LOADING, payload})
 const isFactsLoading = payload => ({type: IS_FACTS_LOADING, payload})
+const setSimilars = payload => ({type: SET_SIMILARS, payload})
 
 export const getFilm = id => dispatch => {
     dispatch(isLoading(true))
@@ -85,5 +90,8 @@ export const getFilm = id => dispatch => {
     filmsAPI.getFacts(id).then(data => {
         dispatch(setFacts(data.items))
         dispatch(isFactsLoading(false))
+    })
+    filmsAPI.getSimilars(id).then(data => {
+       dispatch(setSimilars(data.items))
     })
 }
