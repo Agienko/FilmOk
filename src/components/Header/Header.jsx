@@ -18,7 +18,7 @@ const Header = props => {
         <ul>
             <li><Link to={'/premieres'}>Премьеры</Link> </li>
             <li><Link to={'/top'}>ТОП</Link></li>
-            <li><Link to={'/basket'}>Корзина</Link></li>
+            <li><Link to={'/basket'}>Избранное</Link></li>
             <li>
                 <input type="text" placeholder="поиск..." value={keyWord} onChange={(e)=> setKetWord(e.target.value)}/> 
                 <Link to={!keyWord || '/search' }> 

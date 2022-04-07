@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import s from "./FilmPageRight.module.css"
 
-
 const FilmPageRight = props => {
     
     return (
@@ -14,7 +13,7 @@ const FilmPageRight = props => {
                     <Link to={`/actors/${props.userId}`}>
                         <ul title="Смотреть список">
                             {props.actors.filter((i,j)=> j<20).map((item, i) =>
-                                <li key={item.staffId}>{item.nameRu}</li>)} 
+                                <li key={item.staffId+ i}>{item.nameRu}</li>)} 
                                 <li>...</li>
                         </ul>
                     </Link>

@@ -26,7 +26,6 @@ export default actorsReducer
 export const setClear = () => ({type: SET_CLEAR})
 const isLoading = payload => ({type: IS_LOADING, payload})
 const setActors = payload => ({type: SET_ACTORS, payload})
-
 export const getActors = id => dispatch => {
     dispatch(isLoading(true))
     filmsAPI.getStaf(id).then(data => {

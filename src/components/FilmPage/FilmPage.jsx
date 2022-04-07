@@ -11,21 +11,22 @@ import Similars from "./Similars/Similars";
 
 
 const FilmPage = props => {
-    const userId = +useParams()['*']
+    const filmId = +useParams()['*']
     useEffect(()=>{
-        props.getFilm(userId)
+        props.getFilm(filmId)
         return ()=> {props.setClear()}
-    },[userId])
-console.log(props.filmPage.actors)
+    },[filmId])
+
     if(props.filmPage.isLoading && props.filmPage.isFactsLoading) return <Preloader />
     return (
         <>
             <div className={s.filmpage}>
-                <FilmPageLeft userId={userId} poster={props.filmPage.posterUrlPreview}/>
+                <FilmPageLeft   filmId={filmId} poster={props.filmPage.posterUrlPreview} 
+                                addFavoriteFilm={props.addFavoriteFilm}/>
                 <FilmPageCenter {...props.filmPage}/>
                 <FilmPageRight  raiting={props.filmPage.ratingKinopoisk} 
                                 raitingCount={props.filmPage.ratingKinopoiskVoteCount} 
-                                actors={props.filmPage.actors} userId={userId}/>
+                                actors={props.filmPage.actors} userId={filmId}/>
                 
             </div>
 

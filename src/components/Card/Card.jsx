@@ -22,8 +22,15 @@ const Card = props => {
                     <footer>
                         {props.year && <p>{props.year} год</p>} 
                     </footer>
+                   
                 </div>
+                
             </div>
+                 {props.withBtn && 
+                 <div className={s.btnWrap}> 
+                    <button onClick={() => props.removeFavFilm(props.id)}>Удалить</button>
+                 </div>}   
+           
         </div>
         
     )

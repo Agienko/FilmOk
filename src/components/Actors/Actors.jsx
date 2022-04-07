@@ -15,14 +15,13 @@ const Actors = props => {
     const [isImgOpen, setImgOpen] = useState(false)
     const [image, setImage] = useState(null)
 
-
-
     if (props.isLoading) return <Preloader />
     return (
        
         <div className={s.actors} >
              { isImgOpen && <BigPhoto setImgOpen={setImgOpen} image={image}/>}
            <h1>АКТЕРЫ</h1>
+           <h2>{props.name}</h2>
             <ul>
                 {props.actors.map(item => 
                     <li key={item.staffId + item.professionText}>

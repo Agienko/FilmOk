@@ -8,6 +8,8 @@ const SET_SIMILARS = 'SET_SIMILARS'
 const SET_SIQUELS_PREAQUELS = 'SET_SIQUELS_PREAQUELS'
 const SET_CLEAR = 'SET_CLEAR'
 const SET_ACTORS = 'SET_ACTORS'
+const ADD_FAVORITE_FILM_IN_LOC_STOR = 'ADD_FAVORITE_FILM_IN_LOC_STOR'
+
 
 let initialState = {
     countries: [],
@@ -75,9 +77,31 @@ const filmPageReducer = (state = initialState, action) =>{
         case SET_SIQUELS_PREAQUELS:
             return {...state, sequelsPrequels: action.payload}
         case SET_CLEAR:
-            return {...initialState}
+            return {...initialState, nameRu: state.nameRu}
         case SET_ACTORS:
             return {...state, actors: action.payload}
+        case ADD_FAVORITE_FILM_IN_LOC_STOR:
+            let localFavFilms = []
+            if(localStorage['favoriteFilms']){ //если не пусто
+                localFavFilms = JSON.parse(localStorage['favoriteFilms'])
+            }
+            if(!localFavFilms.map(i => i.id).includes(state.kinopoiskId)) {
+                localFavFilms.push({
+                    id: state.kinopoiskId,
+                    name: state.nameRu,
+                    duration: state.duration,
+                    poster: state.posterUrlPreview,
+                    raiting: state.ratingKinopoisk,
+                    year: state.year,
+                    genres: state.genres,
+                    filmLength: state.filmLength,
+                    countries: state.countries
+                })
+            }
+            localStorage['favoriteFilms'] = JSON.stringify(localFavFilms)
+
+                console.log(JSON.parse(localStorage['favoriteFilms']))
+            return state
         default:
             return state
     }
@@ -92,6 +116,7 @@ const isFactsLoading = payload => ({type: IS_FACTS_LOADING, payload})
 const setSimilars = payload => ({type: SET_SIMILARS, payload})
 const setSequelsPrequels = payload => ({type: SET_SIQUELS_PREAQUELS, payload})
 const setActors = payload => ({type: SET_ACTORS, payload})
+export const addFavoriteFilm = () => ({type: ADD_FAVORITE_FILM_IN_LOC_STOR})
 
 export const getFilm = id => dispatch => {
     dispatch(isLoading(true))

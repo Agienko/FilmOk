@@ -2,7 +2,7 @@
   padding: 20px;
   padding-bottom: 180px;
 }
-.actors h1{
+.actors h1, h2{
   color:white;
   text-align: center;
   text-shadow: 0 0 8px rgba(17, 17, 17, 0.777);
@@ -24,9 +24,9 @@
   box-shadow: 0 0 15px rgba(10, 10, 10, 0.815);
 }
 .figure img{
+  cursor: pointer;
   margin-bottom: 5px;
   border-radius: 5px;
   width: 170px;
   height: 280px;
-  /* object-fit:contain; */
 }

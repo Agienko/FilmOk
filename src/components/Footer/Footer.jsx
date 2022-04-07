@@ -9,6 +9,7 @@ const Footer = props => {
            <ul>
             <li><Link to={'/premieres'}>ПРЕМЬЕРЫ</Link> </li>
             <li><Link to={'/top'}>ТОП</Link></li>
+            <li><Link to={'/basket'}>ИЗБРАННОЕ</Link></li>
         </ul>
         </div>
     )
