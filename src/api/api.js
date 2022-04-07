@@ -40,7 +40,7 @@ const instance = axios.create({
     },
     getSimilars: filmId => {
         return instance(`films/${filmId}/similars`) //похожие фильмы
-        .then(responce => responce.data)
+        .then(responce => responce.data).catch(data=> data)
     },
     getPremieres: (year, month) => { //month: JANUARY, FEBRUARY....
         return instance(`films/premieres?year=${year}&month=${month}`)
@@ -52,7 +52,7 @@ const instance = axios.create({
     },
     getSequelsPrequels: filmId => {                                 
         return instanceV2_1(`films/${filmId}/sequels_and_prequels`)
-        .then(responce => responce.data)
+        .then(responce => responce.data).catch(data=> data)
     },
     serchKeyWords: (words, page) => {                                 
         return instanceV2_1(`films/search-by-keyword?keyword=${words}&page=${page}`)

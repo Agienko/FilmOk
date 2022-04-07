@@ -3,8 +3,12 @@ import s from "./Header.module.css"
 import logo from "../../img/logo.jpg"
 import search from "../../img/search.png"
 import { Link } from "react-router-dom";
+import menuImg from "../../img/mobMenu.png"
+
 const Header = props => {
     const [keyWord, setKetWord] = useState('')
+
+    const [closeMenu, setCloseMenu] = useState(true)
     const handleClick = () =>{
         if (!!keyWord) {
             props.getSearchingFilms(keyWord, 1)
@@ -13,9 +17,10 @@ const Header = props => {
     }
 
     return (
-        <div className={s.header}>
+        <div className={!closeMenu ? s.header + ' ' +  s.close : s.header}>
             <img src={logo} alt="logo" />
-        <ul>
+            <div onClick={() => setCloseMenu(!closeMenu)} className={s.mobMenu }><img src={menuImg} alt="menu" /></div>
+        <ul >
             <li><Link to={'/premieres'}>Премьеры</Link> </li>
             <li><Link to={'/top'}>ТОП</Link></li>
             <li><Link to={'/basket'}>Избранное</Link></li>

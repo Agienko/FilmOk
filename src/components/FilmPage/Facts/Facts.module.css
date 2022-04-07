@@ -20,4 +20,6 @@
 }
 .facts ul li{
     list-style:circle;
+    margin-bottom: 10px;
 }
+
