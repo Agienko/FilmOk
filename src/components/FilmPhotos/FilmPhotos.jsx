@@ -4,6 +4,7 @@ import BigPhoto from "../BigPhoto/BigPhoto";
 import Pagination from "../Pagination/Pagination";
 import Preloader from "../Preloader/Preloader";
 import s from "./FilmPhotos.module.css"
+import FilmPhotosMenu from "./FilmPhotosMenu/FilmPhotosMenu";
 
 const FilmPhotos = props => {
     const userId = +useParams()['*']
@@ -18,17 +19,9 @@ const FilmPhotos = props => {
     return (
         <div className={s.photos}>
           { isImgOpen && <BigPhoto setImgOpen={setImgOpen} image={image}/>}
-            <ul>
-                <li onClick={() => props.getImages(userId,'STILL', 1)}>Кадры</li>
-                <li onClick={() => props.getImages(userId,'SHOOTING', 1)}>Изображения со съемок</li>
-                <li onClick={() => props.getImages(userId,'POSTER', 1)}>Постеры</li>
-                <li onClick={() => props.getImages(userId,'FAN_ART', 1)}>Фан-арты</li>
-                <li onClick={() => props.getImages(userId,'PROMO', 1)}>Промо</li>
-                <li onClick={() => props.getImages(userId,'CONCEPT', 1)}>Концепт-арты</li>
-                <li onClick={() => props.getImages(userId,'WALLPAPER ', 1)}>Обои</li>
-                <li onClick={() => props.getImages(userId,'COVER', 1)}>Обложки</li>
-                <li onClick={() => props.getImages(userId,'SCREENSHOT', 1)}>Скриншоты</li>
-            </ul>
+          
+          <FilmPhotosMenu filmId={userId} getImages={props.getImages}/>
+           
             <h1 className={s.h1}>{props.name}</h1>
             <div className={s.container}>
                

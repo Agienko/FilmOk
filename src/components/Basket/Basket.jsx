@@ -10,7 +10,7 @@ const Basket = props => {
     return (
         <div className={s.wrapper}>
             <h1>Избранное</h1>
-            {!props.favFilms.length && <h3>Здесь пока ничего нет...</h3>}
+            {!props.favFilms.length && <h3 className={s.h3}>Здесь пока ничего нет...</h3>}
             <div className={s.basket} >
                     
                 {props.favFilms.map(i => 

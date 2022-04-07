@@ -1,11 +1,12 @@
 .actors{
-  padding: 20px;
+ 
   padding-bottom: 180px;
 }
 .actors h1, h2{
   color:white;
   text-align: center;
   text-shadow: 0 0 8px rgba(17, 17, 17, 0.777);
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 .actors ul{
