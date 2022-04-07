@@ -1,13 +1,79 @@
 .similars{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  
+    margin: 0 70px;
+    overflow-x: hidden;
+    min-width: 180px;
+    user-select: none;
+    border-radius: 10px;
 }
+
+.content{
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 180px;
+}
+
 .similarsWrapp{
-    
+    position: relative;
     color:white;
     text-shadow: 2px 2px 8px rgba(14, 14, 14, 0.775);
     text-align: center;
     padding: 10px;
+}
+.arrowWrapLeft, .arrowWrapRight{
+    z-index: 4000;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    top: 200px;
+    box-shadow: 0 0 5px black;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all .2s e;
+}
+
+.arrowWrapLeft:hover, .arrowWrapRight:hover{
+    opacity: 0.9;
+    box-shadow: 0 0 10px black;
+}
+
+
+.arrowWrapRight{
+right: 50px;
+}
+
+.arrowWrapLeft{
+    left: 50px;
+    }
+    
+.arrowWrapLeft img, .arrowWrapRight img{
+    width: 30px;
+    height: 30px;
+}
+.arrowWrapLeft img{
+    transform: rotate(90deg);
+}
+
+.arrowWrapRight img{
+    transform: rotate(-90deg);
+}
+
+@media (max-width:700px) {
+
+}
+
+@media (max-width:500px) {
+    .similars{
+        margin: 0 ;
+    }
+    .content{
+        flex-wrap: wrap;
+    }
+    .arrowWrapLeft, .arrowWrapRight{
+       display: none;
+    }
 }

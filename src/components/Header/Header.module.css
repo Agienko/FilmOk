@@ -96,7 +96,6 @@
         grid-template-columns: 1fr;
         height:auto;
         justify-content: space-between;
-
     }
     .header > img{ 
         display: none;
@@ -104,21 +103,16 @@
     .header ul{
         margin-left: 0;
         margin-right: 0;
-
-        
     }
         .header ul li{
            padding: 10px;
     }
-
-
 }
 
 @media (max-width:500px) {
     .mobMenu{
         display: flex;
     }
-
 
     body{
         background-color:#000000;
