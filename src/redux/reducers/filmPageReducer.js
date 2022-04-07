@@ -99,8 +99,6 @@ const filmPageReducer = (state = initialState, action) =>{
                 })
             }
             localStorage['favoriteFilms'] = JSON.stringify(localFavFilms)
-
-                console.log(JSON.parse(localStorage['favoriteFilms']))
             return state
         default:
             return state

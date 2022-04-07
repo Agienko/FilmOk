@@ -6,7 +6,7 @@ import s from "./Top.module.css"
 import TopSettings from "./TopSett/TopSettings";
 
 const Top = props => {
-    useEffect(() =>props.getTopFilms(), [])
+    useEffect(() => {props.getTopFilms()}, [])
 
     const setHandleTopFilms = type => props.getTopFilms(type, 1)
 
@@ -27,7 +27,7 @@ const Top = props => {
                         premiere={i.premiereRu} year={i.year} id={i.filmId} key={i.filmId}
                     />)}
             </div>
-            
+
             <Pagination activePage ={props.top.activePage} setActivePage={props.getTopFilms}
                         type={props.top.type} pagesCount={props.top.pagesCount}/>
         </div>
