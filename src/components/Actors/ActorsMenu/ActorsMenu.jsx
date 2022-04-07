@@ -2,6 +2,7 @@ import React from "react";
 import s from "./ActorsMenu.module.css"
 
 const ActorsMenu = props => {
+  
   const professions = Array.from(new Set(props.actors.map(i=> i.professionText)))
     return (
             <ul className={s.menu}>
@@ -11,4 +12,4 @@ const ActorsMenu = props => {
     )
 }
 
-export default ActorsMenu
+export default React.memo(ActorsMenu)

@@ -9,7 +9,7 @@ const Actors = props => {
     const filmId = +useParams()['*']
     useEffect(() =>{
         props.getActors(filmId)
-    },[])
+    },[filmId])
     
     const [isImgOpen, setImgOpen] = useState(false)
     const [image, setImage] = useState(null)
