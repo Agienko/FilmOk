@@ -20,7 +20,8 @@ const FilmPage = props => {
         <>
             <div className={s.filmpage}>
                 <FilmPageLeft   filmId={filmId} poster={props.filmPage.posterUrlPreview} 
-                                addFavoriteFilm={props.addFavoriteFilm}/>
+                                addFavoriteFilm={props.addFavoriteFilm} 
+                                isFilmAdded={props.filmPage.isFilmAdded}/>
                 <FilmPageCenter {...props.filmPage}/>
                 <FilmPageRight  raiting={props.filmPage.ratingKinopoisk} 
                                 raitingCount={props.filmPage.ratingKinopoiskVoteCount} 

@@ -11,19 +11,17 @@ const Basket = props => {
         }
     },[])
     
-    
     const removeFavFilm = id => {
-        const newStorage =favFilms.filter(i => i.id !== id)
-        localStorage['favoriteFilms'] = JSON.stringify(newStorage)
+        const newStorage = favFilms.filter(i => i.id !== id)
+        localStorage['favoriteFilms'] = JSON.stringify(favFilms.filter(i => i.id !== id))
         setFavFilms(newStorage)
     }
-    // console.log
+    
     return (
         <div className={s.wrapper}>
             <h1>Избранное</h1>
             {!favFilms.length && <h3 className={s.h3}>Здесь пока ничего нет...</h3>}
-            <div className={s.basket} >
-                    
+            <div className={s.basket} > 
                 {favFilms.map(i => 
                     <Card   image={i.poster} name={i.name} duration={i.duration}
                             countries={i.countries} genres={i.genres} 

@@ -59,7 +59,8 @@ let initialState = {
     isFactsLoading: false,
     similars: [],
     sequelsPrequels: [],
-    actors: []
+    actors: [],
+    isFilmAdded: false
 }
 
 const filmPageReducer = (state = initialState, action) =>{
@@ -82,10 +83,12 @@ const filmPageReducer = (state = initialState, action) =>{
             return {...state, actors: action.payload}
         case ADD_FAVORITE_FILM_IN_LOC_STOR:
             let localFavFilms = []
+            let payload = false
             if(localStorage['favoriteFilms']){ //если не пусто
                 localFavFilms = JSON.parse(localStorage['favoriteFilms'])
             }
             if(!localFavFilms.map(i => i.id).includes(state.kinopoiskId)) {
+              payload = true
                 localFavFilms.push({
                     id: state.kinopoiskId,
                     name: state.nameRu,
@@ -97,9 +100,9 @@ const filmPageReducer = (state = initialState, action) =>{
                     filmLength: state.filmLength,
                     countries: state.countries
                 })
-            }
+            } 
             localStorage['favoriteFilms'] = JSON.stringify(localFavFilms)
-            return state
+            return {...state, isFilmAdded: payload}
         default:
             return state
     }
