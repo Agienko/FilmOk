@@ -17,14 +17,17 @@ const Search = props => {
 
     return (
         <div >
-          {props.pagesCount > 1 && 
+          
+
+            <h1 className={s.h1}>Поиск</h1>
+
+            {props.pagesCount > 1 && 
             <Pagination 
                 activePage ={props.activePage} setActivePage={props.getSearchingFilms}
                 type={props.keyWord} pagesCount={props.pagesCount}
             />
             }
 
-            <h1 className={s.h1}>Поиск</h1>
             <div className={s.info}>
                 <p>Поиск: "{props.keyWord}"</p>
                 {props.searchFilmsCountResult === 0 

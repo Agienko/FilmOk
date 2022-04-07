@@ -7,7 +7,6 @@ import TopSettings from "./TopSett/TopSettings";
 
 const Top = props => {
     useEffect(() =>props.getTopFilms(), [])
-
     const setHandleTopFilms = type => props.getTopFilms(type, 1)
 
     if(props.top.isLoading) return <Preloader />
@@ -16,6 +15,11 @@ const Top = props => {
             <TopSettings setHandleTopFilms={setHandleTopFilms} />
 
             <h1 className={s.h1}>{props.top.header}</h1>
+
+            {props.top.pagesCount > 1 &&  
+                <Pagination activePage ={props.top.activePage} setActivePage={props.getTopFilms}
+                            type={props.top.type} pagesCount={props.top.pagesCount}
+                />}
             <div className={s.top}>
                 {props.top.films.map(i => 
                 <Card 
@@ -24,10 +28,10 @@ const Top = props => {
                     premiere={i.premiereRu} year={i.year} id={i.filmId} key={i.filmId}
                 />)}
             </div>
-            <Pagination 
-                activePage ={props.top.activePage} setActivePage={props.getTopFilms}
-                type={props.top.type} pagesCount={props.top.pagesCount}
-            />
+            {props.top.pagesCount > 1 &&  
+                <Pagination activePage ={props.top.activePage} setActivePage={props.getTopFilms}
+                            type={props.top.type} pagesCount={props.top.pagesCount}
+                />}
         </div>
     )
 }

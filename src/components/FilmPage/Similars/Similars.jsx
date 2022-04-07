@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../Card/Card";
+import CardLittle from "../../CardLittle/CardLittle";
 
 import s from "./Similars.module.css"
 
@@ -10,7 +10,7 @@ const Similars = props => {
                 <h2> Похожие фильмы:</h2>
                     <div className={s.similars}>
                         {props.similars.map(i =>
-                        <Card image={i.posterUrlPreview} name={i.nameRu} id={i.filmId} key={i.filmId}/>
+                        <CardLittle image={i.posterUrlPreview} name={i.nameRu} id={i.filmId} key={i.filmId}/>
                         )}
                     </div>
             </div>

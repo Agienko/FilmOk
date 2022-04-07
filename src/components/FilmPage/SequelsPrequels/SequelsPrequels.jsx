@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../Card/Card";
+import CardLittle from "../../CardLittle/CardLittle";
 import s from "./SequelsPrequels.module.css"
 
 const SequelsPrequels = props => {
@@ -9,7 +9,7 @@ const SequelsPrequels = props => {
                 <h2> Сиквелы и приквелы:</h2>
                     <div className={s.sequelsPrequels}>
                         {props.sequelsPrequels.map(i =>
-                        <Card image={i.posterUrlPreview} 
+                        <CardLittle image={i.posterUrlPreview} 
                         name={i.nameRu} 
                         id={i.filmId} key={i.filmId} relationType={i.relationType}/>
                         )}

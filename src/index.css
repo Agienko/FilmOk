@@ -20,4 +20,5 @@ a{
     background-image: url(./img/background.jpg);
     background-position: 0 0;
     background-attachment: fixed;
+    padding-bottom: 150px;
 }
