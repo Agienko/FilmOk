@@ -3,7 +3,6 @@ import { getFilm , setClear, addFavoriteFilm} from "../../redux/reducers/filmPag
 import FilmPage from "./FilmPage";
 
 
-
 const mapStateToProps = state =>({filmPage: state.filmPage})
 
 const FilmPageContainer = connect(mapStateToProps,{getFilm, setClear, addFavoriteFilm})(FilmPage)

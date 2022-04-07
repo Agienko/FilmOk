@@ -18,7 +18,6 @@ const FilmPageRight = props => {
                         </ul>
                     </Link>
                     
-                    
                     <p>Всего: {props.actors.length}</p>
             </div>
         </div>

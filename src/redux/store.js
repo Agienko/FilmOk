@@ -18,7 +18,6 @@ const reducers = combineReducers({
         basket: basketReducer
 })
 
-
 let store = createStore(reducers, applyMiddleware(thunk))
 
 export default store

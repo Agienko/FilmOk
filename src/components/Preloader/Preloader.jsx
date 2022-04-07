@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Preloader.module.css"
 import image from "../../img/preloader.gif"
+
 const Preloader = props => {
  
     return (
@@ -8,7 +9,6 @@ const Preloader = props => {
             <div>
                 <img src={image} alt="Loading..." />
             </div>
-          
         </div>
     )
 }

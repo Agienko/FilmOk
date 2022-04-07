@@ -7,25 +7,21 @@ import ActorsMenu from "./ActorsMenu/ActorsMenu";
 
 const Actors = props => {
     const filmId = +useParams()['*']
-    useEffect(() =>{
-        props.getActors(filmId)
-    },[filmId])
+    useEffect(() => props.getActors(filmId), [filmId])
     
     const [isImgOpen, setImgOpen] = useState(false)
     const [image, setImage] = useState(null)
-
     const [filterWord, setfilterWord] = useState(undefined)
     
     if (props.isLoading) return <Preloader />
-    return (
-       
-        <div className={s.actors} >
-             { isImgOpen && <BigPhoto setImgOpen={setImgOpen} image={image}/>}
-             <ActorsMenu actors={props.actors} setfilterWord={setfilterWord}/>
 
-           <h1>АКТЕРЫ</h1>
-           <h2>{props.name}</h2>
-          
+    return (
+        <div className={s.actors} >
+            { isImgOpen && <BigPhoto setImgOpen={setImgOpen} image={image}/>}
+            <ActorsMenu actors={props.actors} setfilterWord={setfilterWord}/>
+
+            <h1>АКТЕРЫ</h1>
+            <h2>{props.name}</h2>
             <ul>
                 {props.actors.filter(i => filterWord ? i.professionText === filterWord : i).map(item => 
                     <li key={item.staffId + item.professionText}>
@@ -40,8 +36,7 @@ const Actors = props => {
                     </li>
                 )}
             </ul>
-        </div>
-        
+        </div> 
     )
 }
 export default Actors

@@ -1,4 +1,12 @@
-.similars{
+.similarsWrapp{
+    position: relative;
+    color:white;
+    text-shadow: 2px 2px 8px rgba(14, 14, 14, 0.775);
+    text-align: center;
+    padding: 10px;
+}
+
+.slider{
     margin: 0 70px;
     overflow-x: hidden;
     min-width: 180px;
@@ -12,13 +20,7 @@
     min-width: 180px;
 }
 
-.similarsWrapp{
-    position: relative;
-    color:white;
-    text-shadow: 2px 2px 8px rgba(14, 14, 14, 0.775);
-    text-align: center;
-    padding: 10px;
-}
+
 .arrowWrapLeft, .arrowWrapRight{
     z-index: 4000;
     position: absolute;
@@ -41,14 +43,13 @@
     box-shadow: 0 0 10px black;
 }
 
-
 .arrowWrapRight{
 right: 50px;
 }
 
 .arrowWrapLeft{
     left: 50px;
-    }
+}
     
 .arrowWrapLeft img, .arrowWrapRight img{
     width: 30px;
@@ -62,16 +63,17 @@ right: 50px;
     transform: rotate(-90deg);
 }
 
-@media (max-width:700px) {
-
+.hide{
+    display: none;
 }
 
 @media (max-width:500px) {
-    .similars{
+    .slider{
         margin: 0 ;
     }
     .content{
         flex-wrap: wrap;
+        justify-content: center;
     }
     .arrowWrapLeft, .arrowWrapRight{
        display: none;

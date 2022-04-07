@@ -6,9 +6,7 @@ import s from "./FilmPage.module.css"
 import FilmPageCenter from "./FilmPageCenter/FilmPageCenter";
 import FilmPageLeft from "./FilmPageLeft/FilmPageLeft";
 import FilmPageRight from "./FilmPageRight/FilmPageRight";
-import SequelsPrequels from "./SequelsPrequels/SequelsPrequels";
-import Similars from "./Similars/Similars";
-
+import Slider from "../Slider/Slider";
 
 const FilmPage = props => {
     const filmId = +useParams()['*']
@@ -27,15 +25,11 @@ const FilmPage = props => {
                 <FilmPageRight  raiting={props.filmPage.ratingKinopoisk} 
                                 raitingCount={props.filmPage.ratingKinopoiskVoteCount} 
                                 actors={props.filmPage.actors} userId={filmId}/>
-                
             </div>
 
-    {(props.filmPage.facts.length > 0) && 
-        <Facts facts={props.filmPage.facts}/> }
-    {props.filmPage.sequelsPrequels.length > 0 && 
-        <SequelsPrequels sequelsPrequels={props.filmPage.sequelsPrequels} /> } 
-    {props.filmPage.similars.length > 0 && 
-        <Similars similars ={props.filmPage.similars}/> } 
+            {(props.filmPage.facts.length > 0) && <Facts facts={props.filmPage.facts}/> }
+                <Slider items ={props.filmPage.sequelsPrequels} header={'Сиквелы и приквелы:'}/>  
+                <Slider items ={props.filmPage.similars} header={'Похожие фильмы:'}/> 
                 
         </>
     )

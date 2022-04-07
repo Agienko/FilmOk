@@ -11,7 +11,10 @@ const Settings = props => {
     return (
             <div className={s.settings + ' ' + (menu || s.upMenu)} >
                 <form className={s.form}> 
-                    <div>Год: <input type="number" onChange={(e)=> setYear(e.target.value)} value={year}/> </div>
+                    <div>
+                        Год: 
+                        <input type="number" onChange={(e)=> setYear(e.target.value)} value={year}/>
+                    </div>
                     <div>
                         Месяц: 
                         <select  onChange={(e) => setMonth(e.target.value)}>
@@ -33,11 +36,10 @@ const Settings = props => {
                 <div className={s.btn}> 
                     <button onClick={handleSendClick}>Поиск</button>
                 </div>
-                <div    className={s.arrow + ' ' + (menu && s.rotate)} 
-                        onClick={handleClick}
-                > <img src={arrow} alt={'arrow'}/> </div>
+                <div className={s.arrow + ' ' + (menu && s.rotate)} onClick={handleClick}>
+                    <img src={arrow} alt={'arrow'}/> 
+                </div>
             </div>
-          
     )
 }
 export default Settings

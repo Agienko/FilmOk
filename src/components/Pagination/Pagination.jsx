@@ -6,6 +6,8 @@ const Pagination = props => {
     let pagesCount = props.pagesCount
     let setActivePage = props.setActivePage
     let type = props.type
+    
+    if (props.pagesCount < 2) return null
     return (
         <div className={s.pagination} >
             <div className={(activePage - 2 <= 0) ? s.hidden : null } onClick={()=>setActivePage(type ,1)}>...</div>

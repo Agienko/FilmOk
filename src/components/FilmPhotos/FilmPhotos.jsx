@@ -19,21 +19,20 @@ const FilmPhotos = props => {
     return (
         <div className={s.photos}>
           { isImgOpen && <BigPhoto setImgOpen={setImgOpen} image={image}/>}
-          
+
           <FilmPhotosMenu filmId={userId} getImages={props.getImages}/>
            
             <h1 className={s.h1}>{props.name}</h1>
             <div className={s.container}>
-               
                 {props.photo.map((item, i) => 
-                <img key={i} src={item.previewUrl} alt={i} 
-                    onClick={(e)=>{setImgOpen(true); setImage(props.photo[e.target.alt].imageUrl)}}/>)}
+                    <img key={i} src={item.previewUrl} alt={i} 
+                    onClick={(e)=>{setImgOpen(true); setImage(props.photo[e.target.alt].imageUrl)}}/>
+                )}
             </div>
-            { props.pagesCount > 1 &&
+           
             <Pagination activePage ={props.activePage} setActivePage={handlegetImage}
-                        type={props.type} pagesCount={props.pagesCount} 
-            />
-            }
+                        type={props.type} pagesCount={props.pagesCount}/>
+          
                 
         </div>
 

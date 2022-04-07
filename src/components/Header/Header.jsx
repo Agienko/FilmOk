@@ -19,18 +19,21 @@ const Header = props => {
     return (
         <div className={!closeMenu ? s.header + ' ' +  s.close : s.header}>
             <img src={logo} alt="logo" />
-            <div onClick={() => setCloseMenu(!closeMenu)} className={s.mobMenu }><img src={menuImg} alt="menu" /></div>
-        <ul >
-            <li><Link to={'/premieres'}>Премьеры</Link> </li>
-            <li><Link to={'/top'}>ТОП</Link></li>
-            <li><Link to={'/basket'}>Избранное</Link></li>
-            <li>
-                <input type="text" placeholder="поиск..." value={keyWord} onChange={(e)=> setKetWord(e.target.value)}/> 
-                <Link to={!keyWord || '/search' }> 
-                    <img src={search} alt="search" title="искать" onClick={handleClick}/>
-                </Link> 
-            </li>
-        </ul>
+            <div onClick={() => setCloseMenu(!closeMenu)} className={s.mobMenu }>
+                <img src={menuImg} alt="menu" />
+            </div>
+            <ul >
+                <li><Link to={'/premieres'}>Премьеры</Link> </li>
+                <li><Link to={'/top'}>ТОП</Link></li>
+                <li><Link to={'/basket'}>Избранное</Link></li>
+                <li>
+                    <input type="text" placeholder="поиск..." value={keyWord} 
+                            onChange={(e)=> setKetWord(e.target.value)}/> 
+                    <Link to={!keyWord || '/search' }> 
+                        <img src={search} alt="search" title="искать" onClick={handleClick}/>
+                    </Link> 
+                </li>
+            </ul>
         </div>
     )
 }

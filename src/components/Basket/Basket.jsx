@@ -4,9 +4,8 @@ import s from "./Basket.module.css"
 
 
 const Basket = props => {
-    useEffect(() =>{
-        props.parseFavFilms()
-    },[])
+    useEffect(() => props.parseFavFilms() ,[])
+
     return (
         <div className={s.wrapper}>
             <h1>Избранное</h1>
@@ -14,17 +13,14 @@ const Basket = props => {
             <div className={s.basket} >
                     
                 {props.favFilms.map(i => 
-                    <Card 
-                    image={i.poster} name={i.name} duration={i.duration}
-                    countries={i.countries} genres={i.genres} 
-                    year={i.year} id={i.id} key={i.id} withBtn={true}
-                    removeFavFilm={props.removeFavFilm}
-                />)}
+                    <Card   image={i.poster} name={i.name} duration={i.duration}
+                            countries={i.countries} genres={i.genres} 
+                            year={i.year} id={i.id} key={i.id} withBtn={true}
+                            removeFavFilm={props.removeFavFilm}/>
+                )}
                 
             </div>
         </div>
-       
-        
     )
 }
 export default Basket

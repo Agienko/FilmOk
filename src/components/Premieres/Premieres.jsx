@@ -15,18 +15,16 @@ const Premieres = props => {
 
     if(props.isLoading) return <Preloader />
     return (
-        <div >
+        <div>
             <Settings getHandlePremieres ={getHandlePremieres}/>
             <h1 className={s.h1}>Премьеры</h1>
             <div className={s.premieres}>
                 {props.films.map(i => 
-                <Card 
-                    image={i.posterUrlPreview} name={i.nameRu} duration={i.duration}
-                    countries={i.countries} genres={i.genres} premiere={i.premiereRu}
-                    year={i.year} id={i.kinopoiskId} key={i.kinopoiskId}
-                />)}
+                    <Card   image={i.posterUrlPreview} name={i.nameRu} duration={i.duration}
+                            countries={i.countries} genres={i.genres} premiere={i.premiereRu}
+                            year={i.year} id={i.kinopoiskId} key={i.kinopoiskId}/>
+                )}
             </div>
-          
         </div>
     )
 }

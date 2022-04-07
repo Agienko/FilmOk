@@ -4,14 +4,12 @@
     flex-direction: column;
 }
 
-
 .left img{
     border-radius: 10px;
     width: 320px;
     border: 3px solid rgba(226, 226, 226, 0.734);
     cursor: pointer;
-    transition: border .2s linear;
-    
+    transition: border .2s linear; 
 }
 
 .left img:hover{

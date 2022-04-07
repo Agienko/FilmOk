@@ -4,7 +4,6 @@ import Pagination from "../Pagination/Pagination";
 import Preloader from "../Preloader/Preloader";
 import s from "./Search.module.css"
 
-
 const Search = props => {
     useEffect(() =>{
         return ()=> {
@@ -17,39 +16,28 @@ const Search = props => {
 
     return (
         <div >
-          
-
             <h1 className={s.h1}>Поиск</h1>
 
-            {props.pagesCount > 1 && 
-            <Pagination 
-                activePage ={props.activePage} setActivePage={props.getSearchingFilms}
-                type={props.keyWord} pagesCount={props.pagesCount}
-            />
-            }
+            <Pagination activePage ={props.activePage} setActivePage={props.getSearchingFilms}
+                        type={props.keyWord} pagesCount={props.pagesCount}/>
 
             <div className={s.info}>
                 <p>Поиск: "{props.keyWord}"</p>
                 {props.searchFilmsCountResult === 0 
-                ?   <p>По вашему запросу ничего не найдено</p>
-                :   <p>Найдено: {props.searchFilmsCountResult} ...</p>
-                }
+                    ? <p>По вашему запросу ничего не найдено</p>
+                    : <p>Найдено: {props.searchFilmsCountResult} ...</p>}
             </div>
            
             <div className={s.top}>
                 {props.films.map(i => 
-                <Card 
-                    image={i.posterUrlPreview} rating={i.rating} name={i.nameRu} 
-                    duration={i.filmLength} countries={i.countries} genres={i.genres}
-                    premiere={i.premiereRu} year={i.year} id={i.filmId} key={i.filmId}
+                    <Card   image={i.posterUrlPreview} rating={i.rating} name={i.nameRu} 
+                            duration={i.filmLength} countries={i.countries} genres={i.genres}
+                            premiere={i.premiereRu} year={i.year} id={i.filmId} key={i.filmId}
                 />)}
             </div>
-            {props.pagesCount > 1 && 
-                <Pagination 
-                    activePage ={props.activePage} setActivePage={props.getSearchingFilms}
-                    type={props.keyWord} pagesCount={props.pagesCount}
-                />
-            }
+
+            <Pagination activePage ={props.activePage} setActivePage={props.getSearchingFilms}
+                        type={props.keyWord} pagesCount={props.pagesCount}/>   
         </div>
     )
 }

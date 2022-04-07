@@ -22,7 +22,6 @@
   border: 2px solid white;
   margin: 10px;
   background-color:rgb(22, 22, 22);
- 
 }
 
 .wrapper .arrow img[alt="close"]{
@@ -59,12 +58,10 @@
   height: 20px;
 }
 
-
 .hidden{
   opacity: 0;
   z-index: -1;
 }
-
 
 @media (max-width:700px) {
   .arrow{
@@ -80,5 +77,4 @@
     width: 10px;
     height: 10px;
   }
-
 }

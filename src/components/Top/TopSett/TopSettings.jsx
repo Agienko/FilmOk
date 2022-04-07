@@ -12,8 +12,7 @@ const TopSettings = props => {
                 <form className={s.form}> 
                     <div>
                         <div>Категория поиска: </div>
-                        
-                        <select  onChange={(e) => setType(e.target.value)}>
+                        <select onChange={(e) => setType(e.target.value)}>
                             <option value="TOP_250_BEST_FILMS"> 250 лучших фильмов</option>
                             <option value="TOP_100_POPULAR_FILMS"> 100 популярных фильмов</option>
                             <option value="TOP_AWAIT_FILMS">ТОП ожидаемых фильмов</option>
@@ -23,9 +22,9 @@ const TopSettings = props => {
                 <div className={s.btn}> 
                     <button onClick={handleSendClick}>Поиск</button>
                 </div>
-                <div    className={s.arrow + ' ' + (menu && s.rotate)} 
-                        onClick={handleClick}
-                > <img src={arrow} alt={'arrow'}/> </div>
+                <div className={s.arrow + ' ' + (menu && s.rotate)} onClick={handleClick}> 
+                    <img src={arrow} alt={'arrow'}/> 
+                </div>
             </div>
           
     )

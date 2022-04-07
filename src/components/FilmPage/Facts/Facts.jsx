@@ -12,6 +12,7 @@ const [moreFacts, setMoreFacts] = useState(5)
                 {props.facts.filter((i, j) => j< moreFacts).map(item => 
                 <div dangerouslySetInnerHTML={{ __html: `<li>${item.text}</li>` }} key={item.text}/>)}
             </ul>
+            
             {(moreFacts < props.facts.length) &&  
                 <div className={s.btnWrap}>
                     <button onClick={() => setMoreFacts(moreFacts + 5)}>Еще...</button>

@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 
 const Card = props => {
     return (
-       
-        <div className={s.card} >
-             
+        <div className={s.card} > 
             <div className={s.wrapper}>
-            <Link to={`/film/${props.id}`}>
-                <img src={props.image} alt="film" width={'260px'} height={'380px'}/>
-            </Link>
+                <Link to={`/film/${props.id}`}>
+                    <img src={props.image} alt="film" width={'260px'} height={'380px'}/>
+                </Link>
                 <div className={s.info}>
                     <h3>{props.name}</h3>
                     {props.rating && <p>Рейтинг: {props.rating}</p>}
@@ -22,17 +20,13 @@ const Card = props => {
                     <footer>
                         {props.year && <p>{props.year} год</p>} 
                     </footer>
-                   
                 </div>
-                
             </div>
-                 {props.withBtn && 
-                 <div className={s.btnWrap}> 
+            {props.withBtn && 
+                <div className={s.btnWrap}> 
                     <button onClick={() => props.removeFavFilm(props.id)}>Удалить</button>
-                 </div>}   
-           
+                </div>}   
         </div>
-        
     )
 }
 export default Card
