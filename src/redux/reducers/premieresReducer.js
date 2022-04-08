@@ -1,7 +1,7 @@
 import { filmsAPI } from "../../api/api"
 
-const GET_PREMIERES = 'GET_PREMIERES'
-const IS_LOADING = 'IS_LOADING'
+const GET_PREMIERES = 'premieres/GET_PREMIERES'
+const IS_LOADING = 'premieres/IS_LOADING'
 
 let initialState = {
 films: [],
@@ -23,7 +23,7 @@ export default premieresReducer
 const getPremieresAC = films => ({type: GET_PREMIERES, films})
 const isLoading = payload => ({type: IS_LOADING, payload})
 
-export const getPremieres = (year, month) => dispatch => {
+export const getPremieres = (year, month) => async dispatch => {
     const yearNow = () => ( new Date().getFullYear() )
     const monthNow = () => {
         const monthes = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 
@@ -33,9 +33,8 @@ export const getPremieres = (year, month) => dispatch => {
     if (!year) year = yearNow()
     if (!month) month = monthNow()
     dispatch(isLoading(true))
-    filmsAPI.getPremieres(year, month)
-    .then(data =>{ 
-        dispatch(getPremieresAC(data.items))
-        dispatch(isLoading(false))
-    })
+    const data = await filmsAPI.getPremieres(year, month)
+    dispatch(getPremieresAC(data.items))
+    dispatch(isLoading(false))
+  
 }

@@ -1,8 +1,8 @@
 import { filmsAPI } from "../../api/api"
 
-const IS_LOADING = 'IS_LOADING'
-const SET_CLEAR = 'SET_CLEAR'
-const SET_ACTORS = 'SET_ACTORS'
+const IS_LOADING = 'actors/IS_LOADING'
+const SET_CLEAR = 'actors/SET_CLEAR'
+const SET_ACTORS = 'actors/SET_ACTORS'
 
 let initialState = {
     isLoading: false,
@@ -23,13 +23,14 @@ const actorsReducer = (state = initialState, action) =>{
 }
 export default actorsReducer
 
-export const setClear = () => ({type: SET_CLEAR})
 const isLoading = payload => ({type: IS_LOADING, payload})
 const setActors = payload => ({type: SET_ACTORS, payload})
-export const getActors = id => dispatch => {
+export const setClear = () => ({type: SET_CLEAR})
+
+export const getActors = id => async dispatch => {
     dispatch(isLoading(true))
-    filmsAPI.getStaf(id).then(data => {
-        dispatch(setActors(data))
-        dispatch(isLoading(false))
-    })
+    // const data = 
+    dispatch(setActors(await filmsAPI.getStaf(id)))
+    dispatch(isLoading(false))
+    
 }

@@ -1,9 +1,9 @@
 import { filmsAPI } from "../../api/api"
 
-const SET_KEYWORD = 'SET_KEYWORD'
-const SET_SEARCHING_RESULT = 'SET_SEARCHING_RESULT'
-const SET_ACTIVE_PAGE = 'SET_ACTIVE_PAGE'
-const IS_LOADING = 'IS_LOADING'
+const SET_KEYWORD = 'search/SET_KEYWORD'
+const SET_SEARCHING_RESULT = 'search/SET_SEARCHING_RESULT'
+const SET_ACTIVE_PAGE = 'search/SET_ACTIVE_PAGE'
+const IS_LOADING = 'search/IS_LOADING'
 
 let initialState = {
     films: [],
@@ -30,19 +30,18 @@ const searchReducer = (state = initialState, action) =>{
 }
 export default searchReducer
 
- export const setKeyWord = keyWord => ({type: SET_KEYWORD, keyWord })
- const setSearchingResult = payload => ({type: SET_SEARCHING_RESULT, payload})
- export const setActivePage = payload => ({type: SET_ACTIVE_PAGE, payload})
- const isLoading = payload => ({type: IS_LOADING, payload})
+const setSearchingResult = payload => ({type: SET_SEARCHING_RESULT, payload})
+const isLoading = payload => ({type: IS_LOADING, payload})
+export const setKeyWord = keyWord => ({type: SET_KEYWORD, keyWord })
+export const setActivePage = payload => ({type: SET_ACTIVE_PAGE, payload})
 
-export const getSearchingFilms = (keyWord, page) => dispatch => {
+export const getSearchingFilms = (keyWord, page) => async dispatch => {
     dispatch(setKeyWord(keyWord))
     dispatch(isLoading(true))
-    filmsAPI.serchKeyWords(keyWord, page)
-    .then(data => {
-        dispatch(setSearchingResult(data))
-        dispatch(setActivePage(page))
-        dispatch(isLoading(false))
-    })
+    const data = await filmsAPI.serchKeyWords(keyWord, page)
+    dispatch(setSearchingResult(data))
+    dispatch(setActivePage(page))
+    dispatch(isLoading(false))
+  
 
 }

@@ -5,7 +5,7 @@ import s from "./FilmPageLeft.module.scss"
 const FilmPageLeft = props => {
 
    const handleClick = () => props.addFavoriteFilm()
-      console.log(props)  
+   
     return (
             <div className={s.left} >
                 <Link to={`/photos/${props.filmId}`}>

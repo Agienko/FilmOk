@@ -1,10 +1,10 @@
 import { filmsAPI } from "../../api/api"
 
-const SET_IMAGES = 'SET_IMAGES'
-const SET_PAGES_COUNT = 'SET_PAGES_COUNT'
-const SET_ACTIVE_PAGE = 'SET_ACTIVE_PAGE'
-const SET_TYPE = 'SET_TYPE'
-const IS_LOADING = 'IS_LOADING'
+const SET_IMAGES = 'filmPhotos/SET_IMAGES'
+const SET_PAGES_COUNT = 'filmPhotos/SET_PAGES_COUNT'
+const SET_ACTIVE_PAGE = 'filmPhotos/SET_ACTIVE_PAGE'
+const SET_TYPE = 'filmPhotos/SET_TYPE'
+const IS_LOADING = 'filmPhotos/IS_LOADING'
 
 let initialState = {
    photo: [],
@@ -38,15 +38,12 @@ const setActivePage = page => ({type: SET_ACTIVE_PAGE, page})
 const setType = payload => ({type: SET_TYPE, payload})
 const isLoading = payload => ({type: IS_LOADING, payload})
 
-export const getImages =(id, type, page) => dispatch => {
+export const getImages =(id, type, page) => async dispatch => {
     dispatch(isLoading(true))
     dispatch(setActivePage(page))
     dispatch(setType(type))
-    filmsAPI.getImages(id, type, page)
-    .then(data => {
-        dispatch(setImages(data.items))
-        dispatch(setPagesCount(data.totalPages))
-        dispatch(isLoading(false))
-    })
-   
+    const data = await filmsAPI.getImages(id, type, page)
+    dispatch(setImages(data.items))
+    dispatch(setPagesCount(data.totalPages))
+    dispatch(isLoading(false))
 }

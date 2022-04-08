@@ -1,14 +1,14 @@
 import { filmsAPI } from "../../api/api"
 
-const SET_FILM_INFO = 'SET_FILM_INFO'
-const SET_FACTS = 'SET_FACTS'
-const IS_LOADING = 'IS_LOADING'
-const IS_FACTS_LOADING = 'IS_FACTS_LOADING'
-const SET_SIMILARS = 'SET_SIMILARS'
-const SET_SIQUELS_PREAQUELS = 'SET_SIQUELS_PREAQUELS'
-const SET_CLEAR = 'SET_CLEAR'
-const SET_ACTORS = 'SET_ACTORS'
-const ADD_FAVORITE_FILM_IN_LOC_STOR = 'ADD_FAVORITE_FILM_IN_LOC_STOR'
+const SET_FILM_INFO = 'filmPage/SET_FILM_INFO'
+const SET_FACTS = 'filmPage/SET_FACTS'
+const IS_LOADING = 'filmPage/IS_LOADING'
+const IS_FACTS_LOADING = 'filmPage/IS_FACTS_LOADING'
+const SET_SIMILARS = 'filmPage/SET_SIMILARS'
+const SET_SIQUELS_PREAQUELS = 'filmPage/SET_SIQUELS_PREAQUELS'
+const SET_CLEAR = 'filmPage/SET_CLEAR'
+const SET_ACTORS = 'filmPage/SET_ACTORS'
+const ADD_FAVORITE_FILM_IN_LOC_STOR = 'filmPage/ADD_FAVORITE_FILM_IN_LOC_STOR'
 
 
 let initialState = {
@@ -109,7 +109,6 @@ const filmPageReducer = (state = initialState, action) =>{
 }
 export default filmPageReducer
 
-export const setClear = () => ({type: SET_CLEAR})
 const setFilmInfo = payload => ({type: SET_FILM_INFO, payload})
 const setFacts = payload => ({type: SET_FACTS, payload})
 const isLoading = payload => ({type: IS_LOADING, payload})
@@ -117,11 +116,13 @@ const isFactsLoading = payload => ({type: IS_FACTS_LOADING, payload})
 const setSimilars = payload => ({type: SET_SIMILARS, payload})
 const setSequelsPrequels = payload => ({type: SET_SIQUELS_PREAQUELS, payload})
 const setActors = payload => ({type: SET_ACTORS, payload})
+export const setClear = () => ({type: SET_CLEAR})
 export const addFavoriteFilm = () => ({type: ADD_FAVORITE_FILM_IN_LOC_STOR})
 
-export const getFilm = id => dispatch => {
+export const getFilm = id => async dispatch => {
     dispatch(isLoading(true))
     dispatch(isFactsLoading(true))
+
     filmsAPI.getFilm(id)
     .then(data =>{ 
         dispatch(setFilmInfo(data))
@@ -140,4 +141,5 @@ export const getFilm = id => dispatch => {
      filmsAPI.getStaf(id).then(data => {
         dispatch(setActors(data))
      })
+    
 }
