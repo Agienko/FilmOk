@@ -3,7 +3,7 @@ import {useParams } from "react-router-dom";
 import BigPhoto from "../BigPhoto/BigPhoto";
 import Pagination from "../Pagination/Pagination";
 import Preloader from "../Preloader/Preloader";
-import s from "./FilmPhotos.module.css"
+import s from "./FilmPhotos.module.scss"
 import FilmPhotosMenu from "./FilmPhotosMenu/FilmPhotosMenu";
 
 const FilmPhotos = props => {

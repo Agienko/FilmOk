@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
-import s from "./Basket.module.css"
+import s from "./Basket.module.scss"
 
 
 const Basket = props => {

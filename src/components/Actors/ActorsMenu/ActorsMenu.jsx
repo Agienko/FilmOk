@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./ActorsMenu.module.css"
+import s from "./ActorsMenu.module.scss"
 
 const ActorsMenu = props => {
   

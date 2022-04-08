@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BigPhoto from "../BigPhoto/BigPhoto";
 import Preloader from "../Preloader/Preloader";
-import s from "./Actors.module.css"
+import s from "./Actors.module.scss"
 import ActorsMenu from "./ActorsMenu/ActorsMenu";
 
 const Actors = props => {

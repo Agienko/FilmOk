@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./CardLittle.module.css"
+import s from "./CardLittle.module.scss"
 import { Link } from "react-router-dom";
 
 const CardLittle = props => {

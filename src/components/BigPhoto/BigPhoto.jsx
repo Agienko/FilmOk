@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import s from "./BigPhoto.module.css"
+import s from "./BigPhoto.module.scss"
 import closeImg from "../../img/close_delete.png"
 import Preloader from "../Preloader/Preloader";
 

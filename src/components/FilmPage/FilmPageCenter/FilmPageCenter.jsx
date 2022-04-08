@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./FilmPageCenter.module.css"
+import s from "./FilmPageCenter.module.scss"
 
 const FilmPageCenter = props => {
    

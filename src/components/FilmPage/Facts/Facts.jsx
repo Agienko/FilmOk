@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import s from "./Facts.module.css"
+import s from "./Facts.module.scss"
 
 const Facts = props => {
 

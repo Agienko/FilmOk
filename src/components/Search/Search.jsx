@@ -2,7 +2,7 @@ import React, { useEffect} from "react";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import Preloader from "../Preloader/Preloader";
-import s from "./Search.module.css"
+import s from "./Search.module.scss"
 
 const Search = props => {
     useEffect(() =>{

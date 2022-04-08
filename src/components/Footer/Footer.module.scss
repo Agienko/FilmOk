@@ -1,0 +1,27 @@
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color:bisque;
+    background-color:rgba(20, 20, 20, 0.943);
+    height: 120px;
+    color:rgb(182, 182, 182);
+    text-align: center;
+    a{
+        color: inherit;
+        text-decoration: none;
+        transition: color .2s linear;
+        &:hover{
+            color:rgb(255, 255, 255); 
+        }
+    }
+    ul{
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li{
+            list-style: none;
+        }
+    }
+}

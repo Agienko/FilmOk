@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardLittle from "../CardLittle/CardLittle";
 import arrow from "../../img/arrow.png"
-import s from "./Slider.module.css"
+import s from "./Slider.module.scss"
 
 const Slider = props => {
     const STEP = 185 //card width

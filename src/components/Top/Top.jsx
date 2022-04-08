@@ -2,7 +2,7 @@ import React, { useEffect} from "react";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import Preloader from "../Preloader/Preloader";
-import s from "./Top.module.css"
+import s from "./Top.module.scss"
 import TopSettings from "./TopSett/TopSettings";
 
 const Top = props => {

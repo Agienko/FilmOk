@@ -8,13 +8,14 @@
 .info {
   padding: 0 20px;
   margin-top: 10px;
-}
-
-.info p{
+  p{
    font-style: italic;
    text-shadow: 0 0 8px black;
    color: white;
+   }
 }
+
+
 .top{
    display: flex;
    flex-wrap: wrap;
