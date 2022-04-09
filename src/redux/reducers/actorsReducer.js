@@ -23,13 +23,12 @@ const actorsReducer = (state = initialState, action) =>{
 }
 export default actorsReducer
 
-const isLoading = payload => ({type: IS_LOADING, payload})
-const setActors = payload => ({type: SET_ACTORS, payload})
+export const isLoading = payload => ({type: IS_LOADING, payload})
+export const setActors = payload => ({type: SET_ACTORS, payload})
 export const setClear = () => ({type: SET_CLEAR})
 
 export const getActors = id => async dispatch => {
     dispatch(isLoading(true))
-    // const data = 
     dispatch(setActors(await filmsAPI.getStaf(id)))
     dispatch(isLoading(false))
     

@@ -37,11 +37,11 @@ const topReducer = (state = initialState, action) =>{
 }
 export default topReducer
 
-const getTopFilmsAC = films => ({type: GET_TOP_FILMS, films})
-const setHeader = name => ({type: SET_HEADER, name})
-const setPagesCount = payload => ({type: SET_PAGES_COUNT, payload})
-const changeActivePage = payload => ({type: CHANGE_ACTIVE_PAGE, payload})
-const isLoading = payload => ({type: IS_LOADING, payload})
+export const getTopFilmsAC = films => ({type: GET_TOP_FILMS, films})
+export const setHeader = name => ({type: SET_HEADER, name})
+export const setPagesCount = payload => ({type: SET_PAGES_COUNT, payload})
+export const changeActivePage = payload => ({type: CHANGE_ACTIVE_PAGE, payload})
+export const isLoading = payload => ({type: IS_LOADING, payload})
 
 export const getTopFilms = (type = 'TOP_250_BEST_FILMS', page = 1) => async dispatch => {
     dispatch(isLoading(true))

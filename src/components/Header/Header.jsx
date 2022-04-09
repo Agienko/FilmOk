@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import menuImg from "../../img/mobMenu.png"
 
 const Header = props => {
-    const [keyWord, setKetWord] = useState('')
+    const [keyWord, setKeyWord] = useState('')
 
     const [closeMenu, setCloseMenu] = useState(true)
     const handleClick = () =>{
         if (!!keyWord) {
             props.getSearchingFilms(keyWord, 1)
-            setKetWord('')
+            setKeyWord('')
         }
     }
 
@@ -28,7 +28,7 @@ const Header = props => {
                 <li><Link to={'/basket'}>Избранное</Link></li>
                 <li>
                     <input type="text" placeholder="поиск..." value={keyWord} 
-                            onChange={(e)=> setKetWord(e.target.value)}/> 
+                            onChange={(e)=> setKeyWord(e.target.value)}/> 
                     <Link to={!keyWord || '/search' }> 
                         <img src={search} alt="search" title="искать" onClick={handleClick}/>
                     </Link> 

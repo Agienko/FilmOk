@@ -12,7 +12,7 @@ const Top = props => {
 
     if(props.top.isLoading) return <Preloader />
     return (
-        <div className={s.topWrapper}>
+        <div className={s.topWrapper} color={'white'}>
             <TopSettings setHandleTopFilms={setHandleTopFilms} />
 
             <h1 className={s.h1}>{props.top.header}</h1>

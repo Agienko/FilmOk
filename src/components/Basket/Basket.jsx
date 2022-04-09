@@ -3,20 +3,8 @@ import Card from "../Card/Card";
 import s from "./Basket.module.scss"
 
 
-const Basket = props => {
-    const [favFilms, setFavFilms] = useState([])
-    useEffect(()=>{
-        if(localStorage['favoriteFilms'] ){
-            setFavFilms(JSON.parse(localStorage['favoriteFilms']))
-        }
-    },[])
-    
-    const removeFavFilm = id => {
-        const newStorage = favFilms.filter(i => i.id !== id)
-        localStorage['favoriteFilms'] = JSON.stringify(favFilms.filter(i => i.id !== id))
-        setFavFilms(newStorage)
-    }
-    
+const Basket = ({favFilms, removeFavFilm}) => {
+   
     return (
         <div className={s.wrapper}>
             <h1>Избранное</h1>

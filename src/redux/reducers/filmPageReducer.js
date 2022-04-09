@@ -109,13 +109,13 @@ const filmPageReducer = (state = initialState, action) =>{
 }
 export default filmPageReducer
 
-const setFilmInfo = payload => ({type: SET_FILM_INFO, payload})
-const setFacts = payload => ({type: SET_FACTS, payload})
-const isLoading = payload => ({type: IS_LOADING, payload})
-const isFactsLoading = payload => ({type: IS_FACTS_LOADING, payload})
-const setSimilars = payload => ({type: SET_SIMILARS, payload})
-const setSequelsPrequels = payload => ({type: SET_SIQUELS_PREAQUELS, payload})
-const setActors = payload => ({type: SET_ACTORS, payload})
+export const setFilmInfo = payload => ({type: SET_FILM_INFO, payload})
+export const setFacts = payload => ({type: SET_FACTS, payload})
+export const isLoading = payload => ({type: IS_LOADING, payload})
+export const isFactsLoading = payload => ({type: IS_FACTS_LOADING, payload})
+export const setSimilars = payload => ({type: SET_SIMILARS, payload})
+export const setSequelsPrequels = payload => ({type: SET_SIQUELS_PREAQUELS, payload})
+export const setActors = payload => ({type: SET_ACTORS, payload})
 export const setClear = () => ({type: SET_CLEAR})
 export const addFavoriteFilm = () => ({type: ADD_FAVORITE_FILM_IN_LOC_STOR})
 

@@ -1,9 +1,9 @@
 import React from "react";
 import s from "./FilmPhotosMenu.module.css"
 
-const FilmPhotosMenu = props => {
+const FilmPhotosMenu = ({filmId, getImages}) => {
 
-  const handleClick = type => props.getImages(props.filmId, type, 1)
+  const handleClick = type => getImages(filmId, type, 1)
   
     return (
             <ul className={s.ul}>

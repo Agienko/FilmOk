@@ -20,8 +20,8 @@ const premieresReducer = (state = initialState, action) =>{
 }
 export default premieresReducer
 
-const getPremieresAC = films => ({type: GET_PREMIERES, films})
-const isLoading = payload => ({type: IS_LOADING, payload})
+export const getPremieresAC = films => ({type: GET_PREMIERES, films})
+export const isLoading = payload => ({type: IS_LOADING, payload})
 
 export const getPremieres = (year, month) => async dispatch => {
     const yearNow = () => ( new Date().getFullYear() )

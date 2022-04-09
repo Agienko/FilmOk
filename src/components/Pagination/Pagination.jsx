@@ -1,13 +1,9 @@
 import React from "react";
 import s from "./Pagination.module.css"
 
-const Pagination = props => {
-   let activePage = props.activePage
-    let pagesCount = props.pagesCount
-    let setActivePage = props.setActivePage
-    let type = props.type
-    
-    if (props.pagesCount < 2) return null
+const Pagination = ({activePage, pagesCount, setActivePage, type}) => {
+ 
+    if (pagesCount < 2) return null
     return (
         <div className={s.pagination} >
             <div className={(activePage - 2 <= 0) ? s.hidden : null } onClick={()=>setActivePage(type ,1)}>...</div>

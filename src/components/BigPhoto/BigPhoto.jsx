@@ -17,7 +17,8 @@ const BigPhoto = props => {
     return (
        <>
        {isLoading && <Preloader />}
-            <div className={s.bigPhoto + ' ' + (isLoading ? s.hidden : '')} onClick={(e) => handleClose(e.target) }>
+            <div className={s.bigPhoto + ' ' + (isLoading ? s.hidden : '')} 
+                onClick={(e) => handleClose(e.target) }>
                 <div className={s.wrapper }>
                     <img className={s.big} src={props.image} onLoad={() => setIsLoading(false)} alt="big"/>
                     <div className={s.arrow } >

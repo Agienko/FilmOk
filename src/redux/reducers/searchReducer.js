@@ -30,8 +30,8 @@ const searchReducer = (state = initialState, action) =>{
 }
 export default searchReducer
 
-const setSearchingResult = payload => ({type: SET_SEARCHING_RESULT, payload})
-const isLoading = payload => ({type: IS_LOADING, payload})
+export const setSearchingResult = payload => ({type: SET_SEARCHING_RESULT, payload})
+export const isLoading = payload => ({type: IS_LOADING, payload})
 export const setKeyWord = keyWord => ({type: SET_KEYWORD, keyWord })
 export const setActivePage = payload => ({type: SET_ACTIVE_PAGE, payload})
 

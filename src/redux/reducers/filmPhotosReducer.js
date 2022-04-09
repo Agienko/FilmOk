@@ -33,10 +33,10 @@ const filmPhotosReducer = (state = initialState, action) =>{
 export default filmPhotosReducer
 
 export const setImages = payload => ({type: SET_IMAGES, payload})
-const setPagesCount = payload => ({type: SET_PAGES_COUNT, payload})
-const setActivePage = page => ({type: SET_ACTIVE_PAGE, page})
-const setType = payload => ({type: SET_TYPE, payload})
-const isLoading = payload => ({type: IS_LOADING, payload})
+export const setPagesCount = payload => ({type: SET_PAGES_COUNT, payload})
+export const setActivePage = page => ({type: SET_ACTIVE_PAGE, page})
+export const setType = payload => ({type: SET_TYPE, payload})
+export const isLoading = payload => ({type: IS_LOADING, payload})
 
 export const getImages =(id, type, page) => async dispatch => {
     dispatch(isLoading(true))

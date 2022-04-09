@@ -4,7 +4,7 @@ import Pagination from "../Pagination/Pagination";
 import Preloader from "../Preloader/Preloader";
 import s from "./Search.module.scss"
 
-const Search = props => {
+const Search =({ isLoading, ...props}) => {
     useEffect(() =>{
         return ()=> {
             props.setKeyWord('')
@@ -12,7 +12,7 @@ const Search = props => {
         }
     },[])
 
-    if(props.isLoading) return <Preloader />
+    if(isLoading) return <Preloader />
 
     return (
         <div >
