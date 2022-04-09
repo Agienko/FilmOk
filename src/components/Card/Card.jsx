@@ -11,7 +11,7 @@ const Card = props => {
                 </Link>
                 <div className={s.info}>
                     <h3>{props.name}</h3>
-                    {props.rating && <p>Рейтинг: {props.rating}</p>}
+                    {props.rating !== 'null' && props.rating && <p>Рейтинг: {props.rating}</p>}
                     {props.duration && <p>Длительность: {props.duration} мин.</p>} 
                     {props.countries && <p> Страна: {props.countries.map(i=> i.country).join(', ')}</p>}
                     {props.genres && <p> Жанр: {props.genres.map(i=> i.genre).join(', ')}</p>}
